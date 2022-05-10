@@ -1,19 +1,17 @@
 # ZTP Server
 
-This is a learning project I undertook in my time at the Linux team as a part of my apprenticeship @Aveniq.
+This is a learning project I undertook in my time at the Linux and Networking team as a part of my apprenticeship @Aveniq.
 
 ## Key Features
 
 ZTP Server on a Raspberry Pi.
 
-* Chooses automatically between RedHat or Ubuntu
-  * RedHat: CentOS, Fedora, RHEL, etc.
+* Automatically configures Cisco switches
+  * Catalyst 9300
 
 ## How To Use
 
-Clone this project onto your local machine that has Ansible installed.
-
-Edit the inventory file and run the playbook.
+Connect switch with an ethernet cable to the Pi and wait until it finished the configuration.
 
 ```bash
 # Edit tftp server
