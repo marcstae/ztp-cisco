@@ -39,7 +39,9 @@ network:
 
 ### 2. Install ISC DHCP-Server on the Raspberry Pi
 
-```
+```bash
+#!/bin/bash
+
 sudo apt install isc-dhcp-server
 
 sudo systemctl status isc-dhcp-server
@@ -47,7 +49,7 @@ sudo systemctl status isc-dhcp-server
 sudo vim /etc/dhcp/dhcpd.conf
 ```
 
-Add the following lines to the dhcpd.conf and modify the the subnet to your local enviroment:
+Add the following lines to the dhcpd.conf and modify the subnet to your local enviroment:
 
 ```
 option domain-name "localhost.localdomain";
@@ -72,7 +74,9 @@ subnet 10.100.10.0 netmask 255.255.255.0 {
 
 We recommend to use the graphical tool [Webmin](https://www.webmin.com/) for managing.
 
-```
+```bash
+#!/bin/bash
+
 sudo apt install webmin
 
 sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip
@@ -86,9 +90,10 @@ sudo dpkg --install webmin_1.970_all.deb
 
 This ZTP Python script is based of [Jeremy Cohoe's c9300-ztp](https://github.com/jeremycohoe/c9300-ztp). The simplified version in this Repo is called: `ztp-homelab.py`
 
-```
-# download the original ZTP script
+```bash
+#!/bin/bash
 
+# download the original ZTP script
 sudo apt install git
 git clone https://github.com/jeremycohoe/c9300-ztp
 ```
