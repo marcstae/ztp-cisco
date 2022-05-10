@@ -103,6 +103,7 @@ Then, copy your ZTP Python script to the webserver access folder:
 `sudo cp ztp-simple.py /var/www/html/ztp-simple.py`
 
 Check if you can load the Python file with any connected browser.
+![](apache.png)
 
 ### 6. Start Process
 
