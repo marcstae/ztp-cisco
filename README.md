@@ -73,13 +73,11 @@ subnet 10.100.10.0 netmask 255.255.255.0 {
 We recommend to use the graphical tool [Webmin](https://www.webmin.com/) for managing.
 
 ```bash
-sudo apt install webmin
-
 sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip
 
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.970_all.deb
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.991_all.deb
 
-sudo dpkg --install webmin_1.970_all.deb
+sudo dpkg --install webmin_1.991_all.deb
 ```
 
 ### 4. Prepare Python Files
