@@ -84,9 +84,11 @@ sudo dpkg --install webmin_1.970_all.deb
 
 ### 4. Prepare Python Files
 
-We based our ZTP script on the scripts of [Jeremy Cohoe's c9300-ztp](https://github.com/jeremycohoe/c9300-ztp). Feel free to modify the commands to your needs. You can find our simplified version in this repo: `ztp-homelab.py`
+This ZTP Python script is based of [Jeremy Cohoe's c9300-ztp](https://github.com/jeremycohoe/c9300-ztp). The simplified version in this Repo is called: `ztp-homelab.py`
 
 ```
+# download the original ZTP script
+
 sudo apt install git
 git clone https://github.com/jeremycohoe/c9300-ztp
 ```
@@ -121,12 +123,3 @@ sudo tail -F /var/log/syslog |grep -i dhcp
 # Apache2 looging command (tail)
 sudo tail -F /var/log/apache2/access.log
 ```
-
-## Contributors
-
-* **Joerg Schultz** - [jorschul](https://github.com/jorschul)
-* **Florian Pachinger** - [flopach](https://github.com/flopach)
-
-## License
-
-This project is licensed under GPL3 - see the [LICENSE.md](LICENSE.md) file for details
