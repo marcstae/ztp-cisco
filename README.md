@@ -2,6 +2,8 @@
 
 This is a learning project I undertook in my time at the Linux and Networking team as a part of my apprenticeship @Aveniq.
 
+This README is forked from: <https://github.com/flopach/ztp2go>
+
 ## Key Features
 
 During the boot process of the switch, the DHCP server gives the switch the location of the ZTP python script (located on the webserver). Then the switch loads the file and executes all the defined configuration commands for provisioning.
@@ -15,8 +17,6 @@ During the boot process of the switch, the DHCP server gives the switch the loca
 * ZTP Repo: <https://github.com/jeremycohoe/c9300-ztp>
 
 ## Configuration Steps
-
-This will help you to setup this environment in your lab.
 
 ### 1. Configuration of the local network (e.g. eth0) = Ethernet port of RasPi
 
