@@ -6,6 +6,8 @@ This README is forked from: <https://github.com/flopach/ztp2go>
 
 ## Key Features
 
+Note: This whole project is based on Kali Linux.
+
 During the boot process of the switch, the DHCP server gives the switch the location of the ZTP python script (located on the webserver). Then the switch loads the file and executes all the defined configuration commands for provisioning.
 
 ![](ztp.png)
@@ -77,19 +79,7 @@ sudo systemctl restart isc-dhcp-server
 sudo systemctl status isc-dhcp-server
 ```
 
-### 3. Install Webmin for smooth configuration of Ubuntu Server 20.04 on Raspberry Pi (optional)
-
-We recommend to use the graphical tool [Webmin](https://www.webmin.com/) for managing.
-
-```bash
-sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip
-
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.991_all.deb
-
-sudo dpkg --install webmin_1.991_all.deb
-```
-
-### 4. Prepare Python Files
+### 3. Prepare Python Files
 
 This ZTP Python script is based of [Jeremy Cohoe's c9300-ztp](https://github.com/jeremycohoe/c9300-ztp). The simplified version in this Repo is called: `ztp-homelab.py`
 
@@ -99,7 +89,7 @@ sudo apt install git
 git clone https://github.com/jeremycohoe/c9300-ztp
 ```
 
-### 5. Setup Webserver
+### 4. Setup Webserver
 
 We need to set up a webserver from where the switch can pull the python file.
 
@@ -112,9 +102,21 @@ Then, copy your ZTP Python script to the webserver access folder:
 Check if you can load the Python file with any connected browser.
 ![](apache.png)
 
-### 6. Start Process
+### 5. Start Process
 
 Now you are ready to start the process. At first start the raspberry pi + services, connect to the switch and then boot the switch.
+
+### 6. Install Webmin for smooth configuration of Kali Linux on Raspberry Pi (optional)
+
+We recommend to use the graphical tool [Webmin](https://www.webmin.com/) for managing.
+
+```bash
+sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip
+
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.991_all.deb
+
+sudo dpkg --install webmin_1.991_all.deb
+```
 
 Some helpful commands:
 
