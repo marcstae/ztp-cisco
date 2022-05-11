@@ -20,29 +20,23 @@ During the boot process of the switch, the DHCP server gives the switch the loca
 
 ### 1. Configuration of the local network (e.g. eth0) = Ethernet port of RasPi
 
-`sudo vim /etc/netplan/01-network-manager-all.yaml`
+`sudo vim /etc/network/interfaces.d/eth0`
 
 Example config:
 
 ```
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eth0:
-      addresses: [10.100.10.100/24]
-      dhcp4: no
-      gateway4: 10.100.10.1
-    eth1:
-      dhcp4: true
+auto eth0
+iface eth0 inet static
+hwaddress b8:27:eb:43:80:fe
+address 10.100.10.100
+netmask 255.255.255.0
+gateway 10.100.10.1
 ```
 
 ### 2. Install ISC DHCP-Server on the Raspberry Pi
 
 ```bash
 sudo apt install isc-dhcp-server
-
-sudo systemctl status isc-dhcp-server
 
 sudo vim /etc/dhcp/dhcpd.conf
 ```
@@ -57,15 +51,35 @@ ddns-update-style none;
 #option ip-tftp-server code 150 = { ip-address };
 authoritative;
 # DHCP range for ZTP on C9300
-subnet 10.100.10.0 netmask 255.255.255.0 {
- range 10.100.10.10 10.100.10.15;
- option domain-name "localhost.localdomain";
- option subnet-mask 255.255.255.0;
- option broadcast-address 10.100.10.255;
- default-lease-time 600;
- max-lease-time 7200;
- option bootfile-name "http://10.100.10.100/ztp-simple.py";
+subnet 192.168.1.0 netmask 255.255.255.0 {
+        range 192.168.1.10 192.168.1.20;
+        option domain-name "localhost.localdomain";
+        option subnet-mask 255.255.255.0;
+        option broadcast-address 192.168.1.255;
+        default-lease-time 600;
+        max-lease-time 7200;
+        option bootfile-name "http://192.168.1.40/ztp-simple.py";
 }
+```
+
+Edit the interfaces file
+
+```bash
+sudo vim /etc/default/isc-dhcp-server
+```
+
+```
+INTERFACESv4="eth0"
+INTERFACESv6=""
+```
+
+Start the DHCP server with:
+
+```bash
+#start the dhcp server
+sudo systemctl restart isc-dhcp-server
+
+sudo systemctl status isc-dhcp-server
 ```
 
 ### 3. Install Webmin for smooth configuration of Ubuntu Server 20.04 on Raspberry Pi (optional)
