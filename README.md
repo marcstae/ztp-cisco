@@ -6,7 +6,7 @@ This README is forked from: <https://github.com/flopach/ztp2go>
 
 ## Key Features
 
-Note: This whole project is based on Kali Linux.
+Note: This whole project is based on Kali Linux. (Altough this isnt reccomended because of various reasons, it works because it was a requirement. For a smoother installation use Ubuntu Server.)
 
 During the boot process of the switch, the DHCP server gives the switch the location of the ZTP python script (located on the webserver). Then the switch loads the file and executes all the defined configuration commands for provisioning.
 
