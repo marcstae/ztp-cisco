@@ -8,9 +8,6 @@ This README is forked from: <https://github.com/flopach/ztp2go>
 
 During the boot process of the switch, the DHCP server gives the switch the location of the ZTP python script (located on the webserver). Then the switch loads the file and executes all the defined configuration commands for provisioning.
 
-* Automatically configures Cisco switches
-  * Catalyst 9300
-
 ![](ztp.png)
 
 * Forked README: <https://github.com/flopach/ztp2go>
@@ -64,9 +61,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 Edit the interfaces file
 
-```bash
-sudo vim /etc/default/isc-dhcp-server
-```
+`sudo vim /etc/default/isc-dhcp-server`
 
 ```
 INTERFACESv4="eth0"
