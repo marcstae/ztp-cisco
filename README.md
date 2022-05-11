@@ -114,9 +114,7 @@ Check if you can load the Python file with any connected browser.
 
 ### 6. Start Process
 
-Now you are ready to start the process. At first start the raspberry pi + services, connect to the switch and then boot the switch:
-
-![](ztp2go-4screens.png)
+Now you are ready to start the process. At first start the raspberry pi + services, connect to the switch and then boot the switch.
 
 Some helpful commands:
 
